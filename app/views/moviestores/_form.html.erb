@@ -1,0 +1,37 @@
+<%= form_for(@moviestore) do |f| %>
+  <% if @moviestore.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@moviestore.errors.count, "error") %> prohibited this moviestore from being saved:</h2>
+
+      <ul>
+      <% @moviestore.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_area :title %>
+  </div>
+  <div class="field">
+    <%= f.label :genre %><br>
+    <%= f.text_area :genre %>
+  </div>
+  <div class="field">
+    <%= f.label :stock %><br>
+    <%= f.number_field :stock %>
+  </div>
+  <div class="field">
+    <%= f.label :release_date %><br>
+    <%= f.date_select :release_date %>
+  </div>
+  <div class="field">
+    <%= f.label :currently_rented_out %><br>
+    <%= f.check_box :currently_rented_out %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

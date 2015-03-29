@@ -1,0 +1,33 @@
+<h1>Listing moviestores</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Genre</th>
+      <th>Stock</th>
+      <th>Release date</th>
+      <th>Currently rented out</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @moviestores.each do |moviestore| %>
+      <tr>
+        <td><%= moviestore.title %></td>
+        <td><%= moviestore.genre %></td>
+        <td><%= moviestore.stock %></td>
+        <td><%= moviestore.release_date %></td>
+        <td><%= moviestore.currently_rented_out %></td>
+        <td><%= link_to 'Show', moviestore %></td>
+        <td><%= link_to 'Edit', edit_moviestore_path(moviestore) %></td>
+        <td><%= link_to 'Destroy', moviestore, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Moviestore', new_moviestore_path %>

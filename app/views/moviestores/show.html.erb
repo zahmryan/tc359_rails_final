@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @moviestore.title %>
+</p>
+
+<p>
+  <strong>Genre:</strong>
+  <%= @moviestore.genre %>
+</p>
+
+<p>
+  <strong>Stock:</strong>
+  <%= @moviestore.stock %>
+</p>
+
+<p>
+  <strong>Release date:</strong>
+  <%= @moviestore.release_date %>
+</p>
+
+<p>
+  <strong>Currently rented out:</strong>
+  <%= @moviestore.currently_rented_out %>
+</p>
+
+<%= link_to 'Edit', edit_moviestore_path(@moviestore) %> |
+<%= link_to 'Back', moviestores_path %>
