@@ -18,6 +18,11 @@ class MoviestoresController < ApplicationController
     @moviestore = Moviestore.new
   end
 
+  # Rentals from Moviestore page
+  def rent
+    @rentals = Rentals.create(rental_params)
+  end
+
   # GET /moviestores/1/edit
   def edit
   end
