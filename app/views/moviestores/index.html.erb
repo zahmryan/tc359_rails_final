@@ -23,11 +23,16 @@
         <td><%= link_to 'Show', moviestore %></td>
         <td><%= link_to 'Edit', edit_moviestore_path(moviestore) %></td>
         <td><%= link_to 'Destroy', moviestore, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><%= link_to 'Rent', @rentals %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+<%= form_tag moviestores_path, :method => 'get' do %>
+    <p>
+      <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag "Search", :name => nil %>
+    </p>
+<% end %>
 
 <br>
 

@@ -47,3 +47,5 @@ gem 'passenger'
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 
 gem 'cat_api', '~> 0.1.0'
+
+gem 'binding_of_caller'

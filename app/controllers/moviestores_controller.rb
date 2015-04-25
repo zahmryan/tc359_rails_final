@@ -5,7 +5,7 @@ class MoviestoresController < ApplicationController
   # GET /moviestores
   # GET /moviestores.json
   def index
-    @moviestores = Moviestore.all
+    @moviestores = Moviestore.search(params[:search])
   end
 
   # GET /moviestores/1
