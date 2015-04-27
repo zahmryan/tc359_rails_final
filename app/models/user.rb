@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
   has_secure_password
-  has_and_belongs_to_many :moviestores
+  has_many :rentalses
+  has_many :moviestores, :through => :rentalses
 end

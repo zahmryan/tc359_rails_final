@@ -6,6 +6,7 @@ class MoviestoresController < ApplicationController
   # GET /moviestores.json
   def index
     @moviestores = Moviestore.search(params[:search])
+    @rentals = Rentals.where(user_id: current_user.id);
   end
 
   # GET /moviestores/1

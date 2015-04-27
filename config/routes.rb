@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   get '/sign-in' => 'sessions#new'
   get '/sign-out' => 'sessions#destroy'
 
+  get '/moviestores/rent/:movie_id' => 'rentals#create', as: :rent
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

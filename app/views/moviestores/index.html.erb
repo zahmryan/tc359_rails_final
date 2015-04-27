@@ -3,6 +3,7 @@
 <table>
   <thead>
     <tr>
+      <th>Movie ID</th>
       <th>Title</th>
       <th>Genre</th>
       <th>Stock</th>
@@ -15,6 +16,7 @@
   <tbody>
     <% @moviestores.each do |moviestore| %>
       <tr>
+        <td><%= moviestore.id %></td>
         <td><%= moviestore.title %></td>
         <td><%= moviestore.genre %></td>
         <td><%= moviestore.stock %></td>
@@ -23,6 +25,7 @@
         <td><%= link_to 'Show', moviestore %></td>
         <td><%= link_to 'Edit', edit_moviestore_path(moviestore) %></td>
         <td><%= link_to 'Destroy', moviestore, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Rent', rent_path(moviestore.id.to_s) %></td>
       </tr>
     <% end %>
   </tbody>
@@ -37,3 +40,20 @@
 <br>
 
 <%= link_to 'New Moviestore', new_moviestore_path %>
+
+<br><br>
+
+<table>
+  <thead>
+  <tr>
+    <% if user_signed_in? %>
+    <th>Movies Currently Rented by <%= current_user.email %></th>
+  </tr>
+  </thead>
+      <% @rentals.each do |rental| %>
+          <tr>
+              <td><%= rental.movie_id %></td>
+          </tr>
+      <% end %>
+    <% end %>
+</table>
